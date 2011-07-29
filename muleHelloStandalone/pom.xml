@@ -1,0 +1,87 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>dk.sorokin.maksim</groupId>
+  <artifactId>muleHelloStandalone</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>war</packaging>
+
+  <name>Self-Contained Standalone Mule Hello World</name>
+  <description>The sources for this application were copied from Mule distributable</description>
+
+  <properties>
+    <mule.version>3.1.2</mule.version>
+  </properties>
+
+  <build>
+    <resources>
+      <resource>
+        <directory>src/main/app</directory>
+      </resource>
+      <resource>
+        <directory>src/main/resources</directory>
+      </resource>
+    </resources>
+  </build>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.codehaus.groovy</groupId>
+      <artifactId>groovy-all</artifactId>
+      <version>1.8.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.mule</groupId>
+      <artifactId>mule-core</artifactId>
+      <version>${mule.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.mule</groupId>
+      <artifactId>mule-core</artifactId>
+      <version>${mule.version}</version>
+      <scope>test</scope>
+      <type>test-jar</type>
+    </dependency>
+
+    <dependency>
+      <groupId>org.mule.modules</groupId>
+      <artifactId>mule-module-builders</artifactId>
+      <version>${mule.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.mule.modules</groupId>
+      <artifactId>mule-module-scripting</artifactId>
+      <version>${mule.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.mule.transports</groupId>
+      <artifactId>mule-transport-vm</artifactId>
+      <version>${mule.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.mule.transports</groupId>
+      <artifactId>mule-transport-servlet</artifactId>
+      <version>${mule.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.mule.transports</groupId>
+      <artifactId>mule-transport-stdio</artifactId>
+      <version>${mule.version}</version>
+    </dependency>
+  </dependencies>
+
+  <repositories>
+    <repository>
+      <id>mule-deps</id>
+      <name>Mule Dependencies</name>
+      <url>http://dist.codehaus.org/mule/dependencies/maven2</url>
+    </repository>
+  </repositories>
+</project>
